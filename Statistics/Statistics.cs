@@ -7,7 +7,20 @@ namespace Statistics
     {
         public Stats CalculateStatistics(List<float> numbers)
         {
-            //Implement statistics here
+            Stats result = new Stats();
+            if (numbers.Count == 0)
+            {
+                result.Min = float.NaN;
+                result.Max = float.NaN;
+                result.Average = float.NaN;
+            }
+            else
+            {
+                result.Min = numbers.Min();
+                result.Max = numbers.Max();
+                result.Average = numbers.Average();
+            }
+            return result;
         }
     }
 }
